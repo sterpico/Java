@@ -1,18 +1,17 @@
-import java.lang.StringBuilder;
-import java.util.*;
-import java.util.Scanner;
-import javax.swing.*;
+package Conversions;
+
+//Hex [0-9],[A-F] -> Binary [0,1]
 
 public class HexaDecimalToBinary {
- 
+
     private final int LONG_BITS = 8;
 
     public void convert(String numHex) {
-        //String a HexaDecimal:
+        // String a HexaDecimal:
         int conHex = Integer.parseInt(numHex, 16);
-        //Hex a Binary:
+        // Hex a Binary:
         String binary = Integer.toBinaryString(conHex);
-        //Presentation:
+        // Output:
         System.out.println(numHex + " = " + completeDigits(binary));
     }
 
@@ -27,7 +26,7 @@ public class HexaDecimalToBinary {
 
         //Testing Numbers:
         String[] hexNums = {"1", "A1", "ef", "BA", "AA", "BB",
-            "19", "01", "02", "03", "04"};
+                "19", "01", "02", "03", "04"};
         HexaDecimalToBinary objConvert = new HexaDecimalToBinary();
 
         for (String num : hexNums) {

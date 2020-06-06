@@ -1,4 +1,4 @@
-package Java.Conversions;
+package Conversions;
 
 import java.util.Scanner;
 //given a source number , source base, destination base, this code can give you the destination number.
@@ -24,6 +24,7 @@ public class AnytoAny {
             dec /= db;
         }
         System.out.println(dn);
+        scn.close();
     }
 
 }

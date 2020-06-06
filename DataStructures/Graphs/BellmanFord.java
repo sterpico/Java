@@ -1,3 +1,5 @@
+package DataStructures.Graphs;
+
 import java.util.*;
 class BellmanFord
 /*Implementation of Bellman ford to detect negative cycles. Graph accepts inputs in form of edges which have 
@@ -21,7 +23,7 @@ start vertex, end vertes and weights. Vertices should be labelled with a number 
         * @param v End vertex
         * @param c Weight
         */
-        Edge(int a,int b,int c)
+        public Edge(int a,int b,int c)
         {
             u=a;
             v=b;
@@ -98,6 +100,7 @@ start vertex, end vertes and weights. Vertices should be labelled with a number 
                 System.out.println();
             }
         }
+        sc.close();
     }
     /**
      * @param source Starting vertex

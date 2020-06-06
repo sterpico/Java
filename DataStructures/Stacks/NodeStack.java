@@ -1,3 +1,4 @@
+package DataStructures.Stacks;
 /**
 * Implementation of a stack using nodes.
 * Unlimited size, no arraylist.
@@ -73,7 +74,7 @@ public class NodeStack<Item> {
         } else {
         	newNs.setPrevious(NodeStack.head);
         	NodeStack.head.setNext(newNs);
-        	NodeStack.head = newNs;
+        	NodeStack.head.setHead(newNs);
         }
 
         NodeStack.setSize(NodeStack.getSize() + 1);
@@ -88,7 +89,7 @@ public class NodeStack<Item> {
 
     	Item item = (Item) NodeStack.head.getData();
 
-    	NodeStack.head = NodeStack.head.getPrevious();
+        NodeStack.head.setHead(NodeStack.head.getPrevious());
     	NodeStack.head.setNext(null);
 
     	NodeStack.setSize(NodeStack.getSize() - 1);

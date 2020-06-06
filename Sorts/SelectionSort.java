@@ -1,21 +1,29 @@
 package Sorts;
 
 /**
- *
  * @author Varun Upadhyay (https://github.com/varunu28)
  * @author Podshivalov Nikita (https://github.com/nikitap492)
- *
  * @see SortAlgorithm
- *
  */
 
 public class SelectionSort implements SortAlgorithm {
 
     /**
+     * This method swaps the two elements in the array
+     * @param arr, i, j The array for the swap and 
+                        the indexes of the to-swap elements
+     */
+    public void swap(T[] arr, int i, int j) {
+       T temp = arr[i];
+       arr[i] = arr[j];
+       arr[j] = temp;
+    }
+    
+    /**
      * This method implements the Generic Selection Sort
      *
      * @param arr The array to be sorted
-     * Sorts the array in increasing order
+     *            Sorts the array in increasing order
      **/
     @Override
     public <T extends Comparable<T>> T[] sort(T[] arr) {
@@ -24,15 +32,15 @@ public class SelectionSort implements SortAlgorithm {
             // Initial index of min
             int min = i;
 
-            for (int j = i +1 ; j < n; j++) {
-                if (SortUtils.less(arr[j], arr[min])) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[min].compareTo(arr[j]) < 0) {
                     min = j;
                 }
             }
 
             // Swapping if index of min is changed
             if (min != i) {
-                SortUtils.swap(arr, i , min);
+                swap(arr, i, min);
             }
         }
 
@@ -52,7 +60,7 @@ public class SelectionSort implements SortAlgorithm {
         SortUtils.print(sorted);
 
         // String Input
-        String[] strings = {"c", "a", "e", "b","d"};
+        String[] strings = {"c", "a", "e", "b", "d"};
         String[] sortedStrings = selectionSort.sort(strings);
 
         //Output => a	b	 c  d	e
